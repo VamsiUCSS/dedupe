@@ -80,7 +80,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql', 
         'NAME': 'makeathon',
         'USER': 'root',
-        'PASSWORD': '9290697013',
+        'PASSWORD': '',
     }
 
 }
