@@ -51,7 +51,7 @@ MIDDLEWARE_CLASSES = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'makeathon.urls'
+ROOT_URLCONF = 'dedupe.urls'
 
 TEMPLATES = [
     {
@@ -69,7 +69,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'makeathon.wsgi.application'
+WSGI_APPLICATION = 'dedupe.wsgi.application'
 
 
 # Database
