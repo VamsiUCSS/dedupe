@@ -43,3 +43,6 @@
 - Thanks to **_Lakshya Foundation_** and **_Innovation Garage_** for providng us an awesome platform **_Makeathon - 6.0_**  to showcase our skills.
 - Thanks to **_Almabse_** for providing the Challenging Problem Statement and to our mentors **_Kalyan Verma_** and **_Vaibhav Awachat_**.
 
+### Contact
+   In case of queries or suggestions please drop a mail at _ucssvamsi@gmail.com_
+
