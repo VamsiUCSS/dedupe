@@ -22,6 +22,7 @@
   ```
   
 ### Usage
+  **_Caution_**: Refrain from refreshing page in between the process to avoid data loss.
 - Give a name to your _data file_, upload the file and Submit.
 - Select the _Unique Identity Column_ of your data-set and the Columns based on which the data is supposed to be deduped.
 - Train the system
