@@ -19,6 +19,7 @@
   <input type="radio" name="answer" value="u"> Unsure<br>
   <input type="radio" name="answer" value="f"> Finish
   <button type="submit">Submit</button>
+  <input type="hidden" name="is_redirect" value="1">
 </form>
 
 

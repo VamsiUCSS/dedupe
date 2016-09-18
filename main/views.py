@@ -18,7 +18,7 @@ def selcol(request):
 	global saved_file
 	saved = False
 	if request.method == "POST":
-		myFile = FileForm(request.POST["file_name"], request.FILES)
+		myFile = FileForm(request.POST, request.FILES)
 		if myFile.is_valid():
 			saved_file = UploadFile()
 			saved_file.file_name = myFile.cleaned_data["file_name"]
@@ -40,9 +40,12 @@ def col_names():
 
 
 def get_answer(request):
+	if not request.POST.get("is_redirect"):
+		return HttpResponseRedirect("/")
 	for i in request.POST:
-		label = request.POST[i]
-		break
+		if i not in ["is_redirect"]:
+			label = request.POST[i]
+			break
 	if label == "f":
 		dedupe_lib.active_train()
 		dedupe_lib.rundedupe2()
@@ -60,7 +63,7 @@ def active_learning(request):
 		return HttpResponseRedirect("/")
 	l = []
 	for col_name in request.POST:
-		if not col_name in ["csrfmiddlewaretoken", "is_redirect"]:
+		if not col_name in ["csrfmiddlewaretoken", "is_redirect", "unique_col"]:
 			l.append(str(col_name))
 	is_active_labelling = dedupe_lib.rundedupe(os.getcwd()+"/media/"+str(saved_file.file), request.POST.get("unique_col"), l)
 	if is_active_labelling :
