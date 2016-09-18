@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import *
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from .forms import FileForm
 import os, csv
 
@@ -13,6 +13,8 @@ def index(request):
 
 
 def selcol(request):
+	if not request.POST.get("is_redirect"):
+		return HttpResponseRedirect("/")
 	global saved_file
 	saved = False
 	if request.method == "POST":
@@ -27,7 +29,7 @@ def selcol(request):
 		myFile = UploadFileForm()
 		return render(request,"main/home.djt",{'form' : myFile})
 
-	return render(request,"main/selcol.djt",{'file_name': saved_file.file_name,'file_path':'media/'+str(saved_file.file), 'cols':col_names()})
+	return render(request,"main/selcol.djt", {'cols':col_names()})
 
 
 def col_names():
@@ -54,21 +56,23 @@ def ask_question(request):
 	return render(request, "main/ask_que.djt", {'que': que})
 
 def active_learning(request):
+	if not request.POST.get("is_redirect"):
+		return HttpResponseRedirect("/")
 	l = []
 	for col_name in request.POST:
-		if not col_name in ["csrfmiddlewaretoken", "file_path"]:
+		if not col_name in ["csrfmiddlewaretoken"]:
 			l.append(str(col_name))
-	is_active_labelling = dedupe_lib.rundedupe(os.getcwd()+"/media/"+str(saved_file.file), "Id", l)
+	is_active_labelling = dedupe_lib.rundedupe(os.getcwd()+"/media/"+str(saved_file.file), request.POST.get("unique_col"), l)
 	if is_active_labelling :
 		return ask_question(request)
 	dedupe_lib.rundedupe2()
 	return render(request, "main/finish.djt")
-	# return HttpResponse(request.POST)
 
 def download(request):
+	if not request.POST.get("is_redirect"):
+		return HttpResponseRedirect("/")
 	response = HttpResponse(content_type='text/csv')
-	response['Content-Disposition'] = 'attachment; filename=%s' % smart_str("dedupe-output.csv")
-	# response['X-Sendfile'] = smart_str("/media/output_files/output.csv")
+	response['Content-Disposition'] = 'attachment; filename=%s' % smart_str(str(saved_file.file_name)+".csv")
 
 	with open(os.getcwd()+"/media/output_files/output.csv") as f_input:
 		reader = csv.reader(f_input)

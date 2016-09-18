@@ -78,8 +78,8 @@ WSGI_APPLICATION = 'makeathon.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', 
-        'NAME': 'makeathon',
-        'USER': 'root',
+        'NAME': '',
+        'USER': '',
         'PASSWORD': '',
     }
 
