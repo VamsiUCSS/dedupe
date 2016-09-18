@@ -38,6 +38,7 @@
 - **_Tip_** : Sort the Confidence Score in descending order and Cluster ID to estimate the accuracy of the Deduping.
 
 ### Acknowledgement
-- Thanks to **_Lakshya Foundation_** and **_Innovation Garage_** for providng an awesome platform **_Makeathon - 6.0_** for us to showcase our skills.
+- Thanks to my team-mates **_Aarti Barai_** and **_Piyush Agarwal_**.
+- Thanks to **_Lakshya Foundation_** and **_Innovation Garage_** for providng us an awesome platform **_Makeathon - 6.0_**  to showcase our skills.
 - Thanks to **_Almabse_** for providing the Challenging Problem Statement and to our mentors **_Kalyan Verma_** and **_Vaibhav Awachat_**.
 
