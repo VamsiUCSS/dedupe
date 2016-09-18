@@ -4,10 +4,12 @@
 
 ### Configuration
 - Install Django, Dedupe and other dependencies in a virtual-env.
+
   ```
   pip install django
   pip install dedupe
   ```
+  
 - Clone the repo.
 - Start **Apache** and **MySQL** on _localhost_.
 - In **_dedupe/settings.py_** set your database name, username and password. Head over to your _localhost/phpmyadmin_ and create a new database with the same name.
