@@ -22,9 +22,9 @@
   ```
   
 ### Usage
-  **_Caution_**: Refrain from refreshing page in between the process to avoid data loss.
-- Give a name to your _data file_, upload the file and Submit.
-- Select the _Unique Identity Column_ of your data-set and the Columns based on which the data is supposed to be deduped.
+  **_Caution_**: Refrain from refreshing page in between the process of _deduping_ to avoid data loss.
+- Upload your _data file_, give a name to it and Submit.
+- Select the _Unique Identity Column_ of your data-set and the _Columns_ based on which the data is supposed to be deduped.
 - Train the system
 
   | Option   | Result   |
@@ -34,15 +34,15 @@
   | Unsure   | The machine skips that question from training             |
   | Finish   | The machine stops training and starts deduping the data.  |
   
-- Wait till the system redirects you to a page with an option to download the output file. Then download the file.
-- The output file consists of two new columns added im the first two positions namely **_Cluster ID_** and **_Confidence Score_**. The Cluster ID is same for all the data rows belonging to the same Cluster.
+- Wait till the system redirects you to a page with an option to download the output file. Then download the file by clicking on it.
+- The output file consists of two new columns added in the front namely **_Cluster ID_** and **_Confidence Score_**. The Cluster ID is same for all the data rows belonging to the same Cluster.
 - **_Tip_** : Sort the Confidence Score in descending order and Cluster ID to estimate the accuracy of the Deduping.
 
 ### Acknowledgement
 - Thanks to my team-mates **_Aarti Barai_** and **_Piyush Agarwal_**.
 - Thanks to **_Lakshya Foundation_** and **_Innovation Garage_** for providng us an awesome platform **_Makeathon - 6.0_**  to showcase our skills.
-- Thanks to **_Almabse_** for providing the Challenging Problem Statement and to our mentors **_Kalyan Verma_** and **_Vaibhav Awachat_**.
+- Thanks to **_Almabse_** for providing the challenging Problem Statement and to our mentors **_Kalyan Verma_** and **_Vaibhav Awachat_**.
 
 ### Contact
-   In case of queries or suggestions please drop a mail at _ucssvamsi@gmail.com_
+   Drop a mail at _ucssvamsi@gmail.com_
 
